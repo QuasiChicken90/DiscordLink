@@ -1,0 +1,64 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"QuasiChicken"
+		]
+	},
+	"header": {
+		"name": "DiscordLinker",
+		"description": "",
+		"min_engine_version": [
+			1,
+			21,
+			60
+		],
+		"uuid": "58216994-0c43-4313-9784-b7f7b77fce27",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "fb7b8472-4888-4182-80c3-cd5d3e7ff6f6",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "57ebbc21-4a6b-468d-afa0-a07ff1d04cbc",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+  {
+    "module_name": "@minecraft/server",
+    "version": "1.18.0-beta"
+  },
+  {
+    "module_name": "@minecraft/server-gametest",
+    "version": "1.0.0-beta"
+  },
+  {
+    "module_name": "@minecraft/server-ui",
+    "version": "1.0.0"
+  },
+  {
+    "module_name": "@minecraft/server-net",
+    "version": "1.0.0-beta"
+  }
+]
+
+}
