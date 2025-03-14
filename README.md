@@ -24,7 +24,7 @@ Real-time forwarding of in-game chat messages to a Discord channel using webhook
 - Once chosen, go to the channel settings > Intergrations > Webhooks and create a new webhook
 - Give it a name or icon (optinal) then copy the webhook url
 - Then go to the file in worlds/world-name/behavior_packs/DiscordLinker/Scripts/main.js
-- Change const webhookUrl = "PASTE_HERE"; to your actual webhook url, for example:
+- Change const webhookUrl = "PASTE_LINK_HERE"; to your actual webhook url, for example:
 
 ```
 const webhookUrl = "https://discord.com/api/webhooks/123456789/abcabcabcabc-abcabcabc";
