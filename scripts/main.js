@@ -14,9 +14,9 @@ world.beforeEvents.chatSend.subscribe((event) => {
     });
 });
 
-world.afterEvents.playerSpawn.subscribe((event) => {
-    const player = event.player;
-    sendDiscordMessage("**" + player.name + "** joined the server.");
+world.afterEvents.playerJoin.subscribe((event) => {
+    const playerName = event.playerName;
+    sendDiscordMessage("**" + playerName + "** joined the server.");
 })
 
 world.afterEvents.playerLeave.subscribe((event) => {
@@ -40,4 +40,4 @@ function sendDiscordMessage(message) {
     });
 }
 
-console.log("Discord webhook script loaded successfully.");
+console.log("Discord webhook connected ✅");
