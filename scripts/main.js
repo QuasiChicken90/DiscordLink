@@ -24,6 +24,31 @@ world.afterEvents.playerLeave.subscribe((event) => {
     sendDiscordMessage("**" + player + "** left the server.");
 })
 
+world.afterEvents.entityDie.subscribe(({deadEntity: entity, damageSource: source}) => {
+    if (entity?.typeId !== 'minecraft:player') return;
+    const playerName = entity.name;
+    
+    let deathMessage;
+    
+    if (source.cause === "entityExplosion" && source.damagingEntity?.typeId === "minecraft:creeper") {
+        deathMessage = `**${playerName}** was blown up by a creeper`;
+    } else if (source.cause === "drowning") {
+        deathMessage = `**${playerName}** drowned`;
+    } else if (source.cause === "fall") {
+        deathMessage = `**${playerName}** fell to their death`;
+    } else if (source.cause === "firetick") {
+        deathMessage = `**${playerName}** burned to death`;
+    }
+    else if (source.damagingEntity?.typeId) {
+        const enemyType = source.damagingEntity.typeId.replace("minecraft:", "");
+        deathMessage = `**${playerName}** was killed by a ${enemyType}`;
+    } else {
+        deathMessage = `**${playerName}** died from ${source.cause || "unknown causes"}`;
+    }
+    
+    sendDiscordMessage(deathMessage);
+});
+
 function sendDiscordMessage(message) {
     const content = message;
     const request = new HttpRequest(webhookUrl);
