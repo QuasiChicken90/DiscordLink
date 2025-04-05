@@ -1,5 +1,6 @@
 # DiscordLink
 DiscordLink is a Minecraft Bedrock behavior pack that integrates your Minecraft server with Discord.
+![{ABF2DB93-586E-41BE-A933-448A9B93E231}](https://github.com/user-attachments/assets/6810a742-8675-4743-9cc6-a1f1cb5cf5af)
 
 # Features
 Real-time forwarding of in-game chat messages to a Discord channel using webhooks.
